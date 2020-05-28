@@ -1,7 +1,18 @@
 #include "interpretation.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
+
+enum mots
+{
+    mot1 = temps;
+    mot2 = aujourdhui;
+    mot3 = demain;
+    mot4 = apres-demain;
+    mot5 = heure;
+    mot6 = musique
+};
 
 Interpretation::Interpretation()
 {
@@ -45,11 +56,31 @@ void LectureDePhrase(Interpretation * p)
         for(int i = 0; i<30; i ++)
         {
             long ascii = 0;
-            std::string lettre;
+            std::string phrase1 = "Quelle temps fera-t-il demain ?";
+            std::string phrase2 = "Quelle heure est-il ?";
+            //std::string mot = "temps"; //faire enum de mots pour la meteo
+            std::cout<<phrase1<<"\n"<<endl;
+            std::cin>>phrase1;
+
+            if ( phrase1.find(mot1) != -1)
+            {
+                switch (phrase1) {
+                phrase1.find(mot1) != -1;
+                    cout<<"_ "<<ends;
+                    break;
+               phrase1.find(mot2) != -1;
+                    cout<<"O "<<ends;
+                    break;
+                phrase1.find(mot3) != -1;
+                    cout<<"X "<<ends;
+                    break;
+                }
+                cout<<"Aujourd'hui, il fait 28°c"
+
+            }
 
 
-            cin>>lettre;
-            cout<<"texte"<<lettre<<endl;
+            cout<<"texte"<<phrase1<<endl;
 //            ascii = lettre;
 //            p->tableau[i] = ascii;
 
