@@ -3,10 +3,14 @@
 #include <stdlib.h>
 
 using namespace std;
-
+int i = 0;
 Questions::Questions()
 {
+//Questions 1
 
+//Questions 2
+
+//Questions 3
 }
 
 void Questions::afficher()
