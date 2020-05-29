@@ -3,15 +3,17 @@
 #include "questions.h"
 
 
-class Interpretation : public Questions
+class Interpretation
 {
 public:
     Interpretation();
+   int NbDemots;
+   int tableau[100];
 
 
 private:
     void afficher();
-    void VerificationDePhrase();
+    int VerificationDePhrase();
     void LectureDePhrase();
     void RechercheBDD();
 };
