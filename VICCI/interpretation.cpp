@@ -66,7 +66,8 @@ void LectureDePhrase(Interpretation * p)
             long ascii = 0;
             std::string phrase1 = "Quelle temps fera-t-il demain ?";
             std::string phrase2 = "Quelle heure est-il ?";
-            mot1 = "temps";
+            std::string mots = "temps";
+            mot
             std::cout<<phrase1<<"\n"<<endl;
             std::cin>>phrase1;
 
@@ -74,13 +75,13 @@ void LectureDePhrase(Interpretation * p)
             {
                 switch (phrase1.find(mot1) != -1) {                          //en developpement
                 phrase1.find(mot1) != -1;
-                    cout<<"_ "<<ends;
+                    cout<<"En ce moment, il fait beau."<<ends;
                     break;
-               phrase1.find(mot2) != -1;
-                    cout<<"O "<<ends;
+               phrase1.find(mot1 & mot2) != -1;
+                    cout<<"Demain, il y aura des nuages."<<ends;
                     break;
-                phrase1.find(mot3) != -1;
-                    cout<<"X "<<ends;
+                phrase1.find(mot1 & mot3) != -1;
+                    cout<<"Dans deux jours, il pleuvra."<<ends;
                     break;
                 }
                 cout<<"Aujourd'hui, il fait 28°c"
@@ -125,4 +126,3 @@ void Interpretation::RechercheBDD()
 {
 
 }
-
