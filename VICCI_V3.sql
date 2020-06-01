@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 17 mai 2020 à 15:07
+-- Généré le :  ven. 29 mai 2020 à 13:56
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -25,30 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `météo`
---
-
-DROP TABLE IF EXISTS `météo`;
-CREATE TABLE IF NOT EXISTS `météo` (
-  `Temps` int(11) NOT NULL,
-  `Température` int(11) NOT NULL,
-  `ID` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `playlist`
 --
 
 DROP TABLE IF EXISTS `playlist`;
 CREATE TABLE IF NOT EXISTS `playlist` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` text NOT NULL,
+  `Genre` text NOT NULL,
   `Artiste` text NOT NULL,
   `Durée` double NOT NULL,
-  `Genre` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+-- Erreur de lecture des données pour la table vicci.playlist : #1064 - Erreur de syntaxe près de 'FROM `vicci`.`playlist`' à la ligne 1
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
