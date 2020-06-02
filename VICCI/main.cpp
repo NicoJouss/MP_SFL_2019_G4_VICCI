@@ -12,12 +12,12 @@ int main(int argc, char *argv[])
 
 
 
-    QSqlDatabase db = QSqlDatabase :: addDatabase ( "QSQLITE" );
-      db . setHostName ( "127.0.0.1" );
-      db . setDatabaseName ( "VICCI" );
-      db . setUserName ( "root" );
-      db . setPassword ( "" );
-      bool ok = db .open();
+    QSqlDatabase db = QSqlDatabase :: addDatabase ( "QMYSQL" );
+      db.setHostName ( "217.128.90.45" );
+      db.setDatabaseName ( "meteo" );
+      db.setUserName ( "etu_meteo" );
+      db.setPassword ( "Nante44" );
+      bool ok = db.open();
 
 if(ok)
     std::cout<<" ok "<< std::endl;
@@ -25,5 +25,5 @@ if(ok)
     std::cout<<" pas ok "<<std:: endl;
 }
 
-    //return a.exec();
+   
 }
