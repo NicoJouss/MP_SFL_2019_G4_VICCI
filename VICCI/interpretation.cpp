@@ -29,42 +29,40 @@ Interpretation::Interpretation()
 
 void Interpretation::afficher()
 {
-//    if(strstr(texteEntré, "salut"))
-//    {
-//      // "salut" a été entré                                       (cela est un test)
-//    }
+    //    if(strstr(texteEntré, "salut"))
+    //    {
+    //      // "salut" a été entré                                       (cela est un test)
+    //    }
 }
 
 int Interpretation::VerificationDePhrase()
 {
-//#include <stdio.h>
-//#include <stdlib.h>
+    //#include <stdio.h>
+    //#include <stdlib.h>
 
-//{
-//    long ascii = 0;
-//    char lettre = 0;                                                (cela ne fonctionne pas)
+    //{
+    //    long ascii = 0;
+    //    char lettre = 0;                                                (cela ne fonctionne pas)
 
-//    lettre = 'a';
-//    ascii = lettre;
-//    printf("Lettre: %c\nCode ASCII: %ld\n", lettre, ascii);
-//    printf("%c", ascii);
+    //    lettre = 'a';
+    //    ascii = lettre;
+    //    printf("Lettre: %c\nCode ASCII: %ld\n", lettre, ascii);
+    //    printf("%c", ascii);
 
-//    return 0;
-//}
-
+    //    return 0;
+    //}
 }
 
 void LectureDePhrase()
 {
 
-    using namespace std;
+    int total = 0;
 
+    for(int i = 0; i<30; i ++)
     {
 
 
-        for(int i = 0; i<30; i ++)
-        {
-
+      
             std::string phrase1;
             std::string phrase2 = "Quelle heure est-il ?";
             std::string mots0 = "temps";
@@ -91,39 +89,14 @@ void LectureDePhrase()
         }
 
 
+       
 
-//            ascii = lettre;
-//            p->tableau[i] = ascii;
-
-
+        }
 
 
-//    total = total + ascii;
-//    printf("Lettre: %c\nCode ASCII: %ld\n", lettre, total);
-//    printf("%c", total);
 
-//            if (total == 553) // temps
-//            {
-//                cout<<"il fait 25°c"<<endl;
-//                total = 0;
-//            }
-//            if (total == 1127) // aujourd'hui
-//            {
-//                cout<<"aujourd'hui, il fait beau"<<endl;
-//                total = 0;
-//            }
-//            if (total == 622) // demain
-//            {
-//                cout<<"Demain, le temps sera nuageux"<<endl;
-//                total = 0;
-//            }
-//        }
-//cout<<p->tableau<<endl;
-
-//    }
+        }
 }
-}
-
 
 void Interpretation::RechercheBDD()
 {

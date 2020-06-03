@@ -1,0 +1,11 @@
+
+:-1: erreur : cannot find -lGL
+:-1: erreur : collect2: error: ld returned 1 exit status
+
+sudo apt-get install libqt4-dev ( commande linux ) 
+
+
+QSqlDatabase: QMYSQL driver not loaded
+QSqlDatabase: available drivers: QSQLITE QMYSQL QMYSQL3 QODBC QODBC3 QPSQL QPSQL7
+
+https://www.electro-info.ovh/index.php?id=215 ( windows/linux)
