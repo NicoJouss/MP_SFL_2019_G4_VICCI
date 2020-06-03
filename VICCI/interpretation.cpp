@@ -65,17 +65,6 @@ void LectureDePhrase()
         for(int i = 0; i<30; i ++)
         {
 
-
-            std::string phrase1 = "Quelle temps fera-t-il demain ?";
-            std::string phrase2 = "Quelle heure est-il ?";
-            std::string mots1 = "temps";
-            std::string mots2 = "demain";
-            std::string mots3 = "apres-demain";
-            std::string mots4 = "musique";
-            std::string mots5 = "pop";
-            std::cout<<phrase1<<"\n"<<endl;
-            std::cin>>phrase1;
-
             std::string phrase1;
             std::string phrase2 = "Quelle heure est-il ?";
             std::string mots0 = "temps";
