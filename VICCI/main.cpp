@@ -10,8 +10,6 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-
-
     QSqlDatabase db = QSqlDatabase :: addDatabase ( "QMYSQL" );
       db.setHostName ( "217.128.90.45" );
       db.setDatabaseName ( "meteo" );
@@ -19,11 +17,11 @@ int main(int argc, char *argv[])
       db.setPassword ( "Nante44" );
       bool ok = db.open();
 
-if(ok)
-    std::cout<<" ok "<< std::endl;
+    if(ok)
+        std::cout<<" ok "<< std::endl;
     else {
-    std::cout<<" pas ok "<<std:: endl;
-}
+        std::cout<<" pas ok "<<std:: endl;
+    }
 
-   
+    return a.exec();
 }
