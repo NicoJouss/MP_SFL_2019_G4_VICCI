@@ -25,7 +25,7 @@ MainWindow::~MainWindow()
  */
 void MainWindow::on_trameButton_clicked()
 {
-    m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
+    m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php?artiste=Dupont");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -37,4 +37,6 @@ void MainWindow::requeteRecue(QString nom, QString resultat)
 {
     if ( nom.compare("trame") == 0 )
         ui->trameResultat->setPlainText(resultat);
+
+
 }
