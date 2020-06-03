@@ -1,6 +1,9 @@
 #include "interpretation.h"
+#include "mainwindow.h"
+
 #include <iostream>
 #include <string>
+#include <QString>
 
 using namespace std;
 
@@ -20,9 +23,9 @@ enum genre //genre de musique
     rock,
 };
 
-Interpretation::Interpretation()
+Interpretation::Interpretation(MainWindow * windows)
 {
-
+    m_windows = windows;
 }
 
 void Interpretation::afficher()
@@ -121,3 +124,46 @@ void Interpretation::RechercheBDD()
 {
 
 }
+
+void Interpretation::nouvelleQuestion( QString question )
+{
+    bool trouveReponse = false;
+
+    if ( ! trouveReponse )
+        trouveReponse = traiterHeure(question);
+    if ( ! trouveReponse )
+        trouveReponse = traiterMeteo(question);
+    if ( ! trouveReponse )
+        trouveReponse = traiterMusique(question);
+}
+
+bool Interpretation::traiterHeure(QString s)
+{
+    if ( s.contains("heure", Qt::CaseInsensitive) )
+    {
+        donnerReponseHeure();
+        return true;
+    }
+    else
+        return false;
+}
+
+bool Interpretation::traiterMusique(QString s)
+{
+
+}
+
+bool Interpretation::traiterMeteo(QString s)
+{
+
+}
+
+void Interpretation::donnerReponseHeure()
+{
+    QString heure = "Il est 8h00";
+
+    m_windows->donnerResultat(heure);
+
+}
+
+
