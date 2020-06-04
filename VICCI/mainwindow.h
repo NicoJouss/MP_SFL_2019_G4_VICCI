@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "requete.h"
+#include "interpretation.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +17,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
+    void donnerResultat( QString s );
+
+private slots:
+    void on_trameButton_clicked();
+    void requeteRecue(QString nom, QString resultat);
+
+    private:
     Ui::MainWindow *ui;
+    Requete * m_requete;
+    Interpretation m_interpretation;
 };
 #endif // MAINWINDOW_H
