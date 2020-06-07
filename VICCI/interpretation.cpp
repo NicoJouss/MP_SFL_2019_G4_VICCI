@@ -131,10 +131,10 @@ void Interpretation::nouvelleQuestion( QString question )
 
     if ( ! trouveReponse )
         trouveReponse = traiterHeure(question);
-    if ( ! trouveReponse )
+   /* if ( ! trouveReponse )
         trouveReponse = traiterMeteo(question);
     if ( ! trouveReponse )
-        trouveReponse = traiterMusique(question);
+        trouveReponse = traiterMusique(question);     */
 }
 
 bool Interpretation::traiterHeure(QString s)
@@ -162,7 +162,7 @@ void Interpretation::donnerReponseHeure()
 {
     QString heure = "Il est 8h00";
 
-    m_windows->donnerResultat(heure);
+    m_windows->ReponseVicci(heure);
 
 }
 

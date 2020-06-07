@@ -24,8 +24,8 @@ MainWindow::~MainWindow()
  */
 void MainWindow::on_trameButton_clicked()
 {
-     m_interpretation.nouvelleQuestion("il fait beau. ");
-//    m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
+
+    m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -33,6 +33,8 @@ void MainWindow::on_trameButton_clicked()
  * \param nom L'identifiant de la requête
  * \param resultat Le résultat de la requête
  */
+
+
 void MainWindow::requeteRecue(QString nom, QString resultat)
 {
     if ( nom.compare("trame") == 0 )
@@ -41,5 +43,14 @@ void MainWindow::requeteRecue(QString nom, QString resultat)
 
 void MainWindow::donnerResultat(QString s)
 {
-     ui->trameResultat->setPlainText(s);
+
+}
+
+void MainWindow::Question()
+{
+     m_interpretation.nouvelleQuestion("il fait beau. ");
+}
+void MainWindow::ReponseVicci(QString reponse)
+{
+    ui->ReponseVicci->setPlainText(reponse);
 }

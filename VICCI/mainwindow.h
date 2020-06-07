@@ -19,9 +19,13 @@ public:
 
     void donnerResultat( QString s );
 
+    void ReponseVicci(QString reponse);
+
 private slots:
     void on_trameButton_clicked();
     void requeteRecue(QString nom, QString resultat);
+    void Question();
+
 
     private:
     Ui::MainWindow *ui;
