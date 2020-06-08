@@ -1,4 +1,4 @@
-QT += core gui sql network
+QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,14 +19,12 @@ SOURCES += \
     interpretation.cpp \
     main.cpp \
     mainwindow.cpp \
-    questions.cpp \
-    requete.cpp
+    questions.cpp
 
 HEADERS += \
     interpretation.h \
     mainwindow.h \
-    questions.h \
-    requete.h
+    questions.h
 
 FORMS += \
     mainwindow.ui

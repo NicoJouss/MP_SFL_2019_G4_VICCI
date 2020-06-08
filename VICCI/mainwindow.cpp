@@ -6,14 +6,13 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , m_interpretation(this)
 {
     ui->setupUi(this);
 
     // construction de l'objet permettant de réaliser des requêtes via un page web php
     m_requete = new Requete();
-    connect(m_requete, SIGNAL(received(QString, QString)), this, SLOT(requeteRecue(QString, QString)));
-
-}
+    connect(m_requete, SIGNAL(received(QString, QString)), this, SLOT(requeteRecue(QString, QString)));}
 
 MainWindow::~MainWindow()
 {
@@ -25,6 +24,7 @@ MainWindow::~MainWindow()
  */
 void MainWindow::on_trameButton_clicked()
 {
+
     m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
 }
 
@@ -33,8 +33,24 @@ void MainWindow::on_trameButton_clicked()
  * \param nom L'identifiant de la requête
  * \param resultat Le résultat de la requête
  */
+
+
 void MainWindow::requeteRecue(QString nom, QString resultat)
 {
     if ( nom.compare("trame") == 0 )
         ui->trameResultat->setPlainText(resultat);
+}
+
+void MainWindow::donnerResultat(QString s)
+{
+
+}
+
+void MainWindow::Question()
+{
+     m_interpretation.nouvelleQuestion("il fait beau. ");
+}
+void MainWindow::ReponseVicci(QString reponse)
+{
+    ui->ReponseVicci->setPlainText(reponse);
 }
