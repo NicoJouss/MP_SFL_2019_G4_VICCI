@@ -128,27 +128,33 @@ bool Interpretation::traiterMusique(QString s)
     if( s.contains("pop", Qt::CaseInsensitive) )
     {
 
-        cout<<"Mettre de la musique pop"<<endl;
+        s = "Mettre de la musique pop";
+         m_windows->ReponseVicci(s);
     }
     if ( s.contains("electro", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique electro"<<endl;
+        s ="Mettre de la musique electro";
+         m_windows->ReponseVicci(s);
     }
     if( s.contains("rap", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique rap"<<endl;
+       s ="Mettre de la musique rap";
+        m_windows->ReponseVicci(s);
     }
     if( s.contains("jazz", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique jazz"<<endl;
+         s ="Mettre de la musique jazz";
+          m_windows->ReponseVicci(s);
     }
     if( s.contains("rock", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique rock"<<endl;
+        s = "Mettre de la musique rock";
+         m_windows->ReponseVicci(s);
     }
     if( s.contains("classique", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique classique"<<endl;
+        s = "Mettre de la musique classique";
+         m_windows->ReponseVicci(s);
     }
 }
 }
