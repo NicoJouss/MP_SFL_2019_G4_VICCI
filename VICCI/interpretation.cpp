@@ -165,15 +165,19 @@ bool Interpretation::traiterMeteo(QString s)
 
     if(s.contains("temps", Qt::CaseInsensitive) && s.contains("aujourd'hui", Qt::CaseInsensitive) )
     {
-        cout<<"Aujourd'hui, il fait 28°c"<<endl;
+
+     s = "Aujourd'hui, il fait 28°c";
+     m_windows->ReponseVicci(s);
     }
     if (s.contains("temps", Qt::CaseInsensitive) && s.contains("demain", Qt::CaseInsensitive))
     {
-        cout<<"Demain, il y aura des nuages."<<endl;
+        s = "Demain, il y aura des nuages.";
+           m_windows->ReponseVicci(s);
     }
     if(s.contains("temps", Qt::CaseInsensitive) && s.contains("dansdeuxjours", Qt::CaseInsensitive))
     {
-        cout<<"Dans deux jours, il pleuvra."<<endl;
+        s = "Dans deux jours, il pleuvra.";
+           m_windows->ReponseVicci(s);
     }
 }
 
@@ -181,7 +185,7 @@ bool Interpretation::traiterMeteo(QString s)
 void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
-    QString s = heure.toString("H:m:s a");
+    QString s = heure.toString("il est H:m:s a");
 
     m_windows->ReponseVicci(s);
 }
