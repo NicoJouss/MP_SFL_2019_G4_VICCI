@@ -65,11 +65,11 @@ void LectureDePhrase()
 //            }
 //            if (s.contains("temps", Qt::CaseInsensitive) && s.contains("demain", Qt::CaseInsensitive))
 //            {
-//                cout<<"Demain, il y aura des nuages."<<ends;
+//                cout<<"Demain, il y aura des nuages."<<endl;
 //            }
 //            if(s.contains("temps", Qt::CaseInsensitive) && s.contains("dansdeuxjours", Qt::CaseInsensitive))
 //            {
-//                cout<<"Dans deux jours, il pleuvra."<<ends;
+//                cout<<"Dans deux jours, il pleuvra."<<endl;
 //            }
 
 
@@ -89,6 +89,7 @@ void Interpretation::RechercheBDD()
 
 void Interpretation::nouvelleQuestion( QString question )
 {
+    std::cout << question.toStdString() << std::endl;
     bool trouveReponse = false;
 
     if ( ! trouveReponse )
@@ -126,27 +127,28 @@ bool Interpretation::traiterMusique(QString s)
 
     if( s.contains("pop", Qt::CaseInsensitive) )
     {
+
         cout<<"Mettre de la musique pop"<<endl;
     }
     if ( s.contains("electro", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique electro"<<ends;
+        cout<<"Mettre de la musique electro"<<endl;
     }
     if( s.contains("rap", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique rap"<<ends;
+        cout<<"Mettre de la musique rap"<<endl;
     }
     if( s.contains("jazz", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique jazz"<<ends;
+        cout<<"Mettre de la musique jazz"<<endl;
     }
     if( s.contains("rock", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique rock"<<ends;
+        cout<<"Mettre de la musique rock"<<endl;
     }
     if( s.contains("classique", Qt::CaseInsensitive) )
     {
-        cout<<"Mettre de la musique classique"<<ends;
+        cout<<"Mettre de la musique classique"<<endl;
     }
 }
 }
@@ -167,11 +169,11 @@ bool Interpretation::traiterMeteo(QString s)
     }
     if (s.contains("temps", Qt::CaseInsensitive) && s.contains("demain", Qt::CaseInsensitive))
     {
-        cout<<"Demain, il y aura des nuages."<<ends;
+        cout<<"Demain, il y aura des nuages."<<endl;
     }
     if(s.contains("temps", Qt::CaseInsensitive) && s.contains("dansdeuxjours", Qt::CaseInsensitive))
     {
-        cout<<"Dans deux jours, il pleuvra."<<ends;
+        cout<<"Dans deux jours, il pleuvra."<<endl;
     }
 }
 
@@ -179,9 +181,9 @@ bool Interpretation::traiterMeteo(QString s)
 void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
-    heure.toString("H:m:s a");
-    m_windows->ReponseVicci(heure);
+    QString s = heure.toString("H:m:s a");
 
+    m_windows->ReponseVicci(s);
 }
 
 

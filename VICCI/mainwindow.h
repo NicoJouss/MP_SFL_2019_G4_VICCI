@@ -27,6 +27,8 @@ private slots:
     void Question();
 
 
+    void on_pushButton_clicked();
+
     private:
     Ui::MainWindow *ui;
     Requete * m_requete;

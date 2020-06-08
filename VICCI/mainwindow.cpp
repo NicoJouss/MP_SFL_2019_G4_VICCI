@@ -25,7 +25,8 @@ MainWindow::~MainWindow()
 void MainWindow::on_trameButton_clicked()
 {
 
-    m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
+   // m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
+     m_requete->update("musique", "http://127.0.0.10/musiqueSelonArtiste.php");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -39,6 +40,8 @@ void MainWindow::requeteRecue(QString nom, QString resultat)
 {
     if ( nom.compare("trame") == 0 )
         ui->trameResultat->setPlainText(resultat);
+    else if ( nom.compare("musique") == 0 )
+        ui->trameResultat->setPlainText(resultat);
 }
 
 void MainWindow::donnerResultat(QString s)
@@ -50,7 +53,13 @@ void MainWindow::Question()
 {
      m_interpretation.nouvelleQuestion("il fait beau. ");
 }
+
 void MainWindow::ReponseVicci(QString reponse)
 {
     ui->ReponseVicci->setPlainText(reponse);
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    m_interpretation.nouvelleQuestion(ui->EntreeText->toPlainText());
 }
