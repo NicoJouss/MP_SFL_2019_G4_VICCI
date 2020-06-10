@@ -10,7 +10,6 @@ protected:
 private:
     void afficher();
     void InitilialiserQuestions();
-    void DemandeDeVicci();
     void Interpretation();
 };
 

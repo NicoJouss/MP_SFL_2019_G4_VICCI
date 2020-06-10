@@ -22,7 +22,7 @@ private:
     int VerificationDePhrase();
     void LectureDePhrase();
     void RechercheBDD();
-
+    bool Bienvenue(QString s);
     bool traiterHeure(QString s);
     bool traiterMusique(QString s);
     bool traiterMeteo(QString s);
