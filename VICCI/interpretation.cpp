@@ -44,43 +44,6 @@ int Interpretation::VerificationDePhrase()
 
 }
 
-void LectureDePhrase()
-{
-
-
-
-
-
-    //            std::string phrase1;
-    //            std::string phrase2 = "Quelle heure est-il ?";
-    //            std::string mots0 = "temps";
-    //            std::string mots1 = "aujourdhui";
-    //            std::string mots2 = "demain";
-    //            std::string mots3 = "dansdeuxjours";
-
-
-    //            if(s.contains("temps", Qt::CaseInsensitive) && s.contains("aujourd'hui", Qt::CaseInsensitive) ))
-    //            {
-    //                cout<<"Aujourd'hui, il fait 28°c"<<endl;
-    //            }
-    //            if (s.contains("temps", Qt::CaseInsensitive) && s.contains("demain", Qt::CaseInsensitive))
-    //            {
-    //                cout<<"Demain, il y aura des nuages."<<endl;
-    //            }
-    //            if(s.contains("temps", Qt::CaseInsensitive) && s.contains("dansdeuxjours", Qt::CaseInsensitive))
-    //            {
-    //                cout<<"Dans deux jours, il pleuvra."<<endl;
-    //            }
-
-
-
-
-
-}
-
-
-
-
 
 void Interpretation::RechercheBDD()
 {
@@ -89,19 +52,21 @@ void Interpretation::RechercheBDD()
 
 
 
+
 void Interpretation::nouvelleQuestion( QString question )
 {
     std::cout << question.toStdString() << std::endl;
     bool trouveReponse = false;
 
-    if ( ! trouveReponse )
-        trouveReponse = Bienvenue(question);
+
     if ( ! trouveReponse )
         trouveReponse = traiterHeure(question);
     if ( ! trouveReponse )
         trouveReponse = traiterMeteo(question);
     if ( ! trouveReponse )
         trouveReponse = traiterMusique(question);
+    if ( ! trouveReponse )
+        trouveReponse = Bienvenue(question);
 }
 
 bool Interpretation::Bienvenue(QString s)
@@ -138,7 +103,6 @@ bool Interpretation::traiterHeure(QString s)
 
 bool Interpretation::traiterMusique(QString s)
 {
-
 
     std::string mots0 = "pop";
     std::string mots1 = "electro";
@@ -191,7 +155,7 @@ bool Interpretation::traiterMeteo(QString s)
     std::string mots0 = "temps";
     std::string mots1 = "aujourdhui";
     std::string mots2 = "demain";
-    std::string mots3 = "dansdeuxjours";
+    std::string mots3 = "apres-demain";
 
 
     if(s.contains("temps", Qt::CaseInsensitive) && s.contains("aujourd'hui", Qt::CaseInsensitive) )
@@ -200,12 +164,12 @@ bool Interpretation::traiterMeteo(QString s)
         s = "Aujourd'hui, il fait 28°c";
         m_windows->ReponseVicci(s);
     }
-    if (s.contains("temps", Qt::CaseInsensitive) && s.contains("demain", Qt::CaseInsensitive))
+    if (s.contains("temps", Qt::CaseInsensitive) && s.contains(" demain", Qt::CaseInsensitive))
     {
         s = "Demain, il y aura des nuages.";
         m_windows->ReponseVicci(s);
     }
-    if(s.contains("temps", Qt::CaseInsensitive) && s.contains("dansdeuxjours", Qt::CaseInsensitive))
+    if(s.contains("temps", Qt::CaseInsensitive) && s.contains("apres-demain", Qt::CaseInsensitive))
     {
         s = "Dans deux jours, il pleuvra.";
         m_windows->ReponseVicci(s);
@@ -216,11 +180,13 @@ bool Interpretation::traiterMeteo(QString s)
 void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
-    QString s;
-    s = "Il est : ";
-    s = s + heure.toString("H:m:s a");
+    QString s = heure.toString("il est H:m:s a");
 
     m_windows->ReponseVicci(s);
 }
 
+bool Interpretation::Aurevoir(QString s)
+{
+    if ( s.contains("au revoir", Qt::CaseInsensitive) ) exit(1);
+}
 

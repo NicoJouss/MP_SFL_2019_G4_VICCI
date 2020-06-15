@@ -20,8 +20,8 @@ public:
 private:
     void afficher();
     int VerificationDePhrase();
-    void LectureDePhrase();
     void RechercheBDD();
+    bool Aurevoir(QString s);
     bool Bienvenue(QString s);
     bool traiterHeure(QString s);
     bool traiterMusique(QString s);
