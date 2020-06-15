@@ -152,9 +152,11 @@ bool Interpretation::traiterMusique(QString s)
 
         if( s.contains("pop", Qt::CaseInsensitive) )
         {
-
+            std::cout << "Le_dragon.mp3" << std::endl;
             s = "Mettre de la musique pop";
-            m_windows->ReponseVicci(s);
+            m_windows->jouerMusique("Le_dragon.mp3");
+
+            //m_windows->ReponseVicci(s);
         }
         if ( s.contains("electro", Qt::CaseInsensitive) )
         {
@@ -217,8 +219,8 @@ void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
     QString s;
-    s = "Il est : ";
-    s = s + heure.toString("H:m:s a");
+    s = "Il est ";
+    s = s + heure.toString("H:mm:ss");
 
     m_windows->ReponseVicci(s);
 }

@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , m_interpretation(this)
+    , m_player(NULL)
 {
     ui->setupUi(this);
 
@@ -41,12 +42,23 @@ void MainWindow::requeteRecue(QString nom, QString resultat)
     if ( nom.compare("trame") == 0 )
         ui->trameResultat->setPlainText(resultat);
     else if ( nom.compare("musique") == 0 )
-        ui->trameResultat->setPlainText(resultat);
+        ReponseVicci(resultat);
 }
 
 void MainWindow::donnerResultat(QString s)
 {
 
+}
+
+void MainWindow::jouerMusique(QString s)
+{
+    m_player = new QMediaPlayer;
+
+    std::cout << QUrl::fromLocalFile(s).toString().toStdString() << std::endl;
+
+    m_player->setMedia(QUrl::fromLocalFile(s));
+    m_player->setVolume(50);
+    m_player->play();
 }
 
 void MainWindow::Question()
@@ -62,4 +74,9 @@ void MainWindow::ReponseVicci(QString reponse)
 void MainWindow::on_pushButton_clicked()
 {
     m_interpretation.nouvelleQuestion(ui->EntreeText->toPlainText());
+}
+
+Requete * MainWindow::getRequete() const
+{
+    return m_requete;
 }

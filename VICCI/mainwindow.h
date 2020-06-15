@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "requete.h"
 #include "interpretation.h"
+#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,10 +19,13 @@ public:
     ~MainWindow();
 
     void donnerResultat( QString s );
+    void jouerMusique(QString s);
 
     void ReponseVicci(QString reponse);
 
-private slots:
+    Requete * getRequete() const;
+
+    private slots:
     void on_trameButton_clicked();
     void requeteRecue(QString nom, QString resultat);
     void Question();
@@ -33,5 +37,7 @@ private slots:
     Ui::MainWindow *ui;
     Requete * m_requete;
     Interpretation m_interpretation;
+
+    QMediaPlayer * m_player;
 };
 #endif // MAINWINDOW_H
