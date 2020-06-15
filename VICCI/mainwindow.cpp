@@ -54,9 +54,12 @@ void MainWindow::jouerMusique(QString s)
 {
     m_player = new QMediaPlayer;
 
+    // mettre le chemin de votre dossier musique
+    s.prepend("/home/sebastien/Musique/");
+
     std::cout << QUrl::fromLocalFile(s).toString().toStdString() << std::endl;
 
-    m_player->setMedia(QUrl::fromLocalFile(s));
+    m_player->setMedia(QUrl::fromLocalFile( s));
     m_player->setVolume(50);
     m_player->play();
 }
