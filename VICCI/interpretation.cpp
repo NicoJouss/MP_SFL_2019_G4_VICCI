@@ -216,7 +216,9 @@ bool Interpretation::traiterMeteo(QString s)
 void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
-    QString s = heure.toString("il est H:m:s a");
+    QString s;
+    s = "Il est : ";
+    s = s + heure.toString("H:m:s a");
 
     m_windows->ReponseVicci(s);
 }
