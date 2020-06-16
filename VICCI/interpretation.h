@@ -21,8 +21,7 @@ private:
     void afficher();
     int VerificationDePhrase();
     void RechercheBDD();
-    bool Aurevoir(QString s);
-    bool Bienvenue(QString s);
+    bool Discussion(QString s);
     bool traiterHeure(QString s);
     bool traiterMusique(QString s);
     bool traiterMeteo(QString s);

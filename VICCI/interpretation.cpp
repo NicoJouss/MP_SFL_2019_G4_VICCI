@@ -66,10 +66,10 @@ void Interpretation::nouvelleQuestion( QString question )
     if ( ! trouveReponse )
         trouveReponse = traiterMusique(question);
     if ( ! trouveReponse )
-        trouveReponse = Bienvenue(question);
+        trouveReponse = Discussion(question);
 }
 
-bool Interpretation::Bienvenue(QString s)
+bool Interpretation::Discussion(QString s)
 {
     if( s.contains("Bonjour", Qt::CaseInsensitive) )
     {
@@ -79,16 +79,54 @@ bool Interpretation::Bienvenue(QString s)
 
     if( s.contains("Salut", Qt::CaseInsensitive) )
     {
-        s = "Salut, en quoi puis-je vous etres utile ?";
+        s = "Salut, en quoi puis-je vous êtres utile ?";
         m_windows->ReponseVicci(s);
     }
 
     if( s.contains("Hey", Qt::CaseInsensitive) )
     {
-        s = "Hey, quelle est votre requete ?";
+        s = "Hey, quelle est votre requète ?";
         m_windows->ReponseVicci(s);
     }
-}
+    if( s.contains("Rien", Qt::CaseInsensitive) )
+    {
+        s = "D'accord.";
+        m_windows->ReponseVicci(s);
+    }
+    if( s.contains("Au revoir", Qt::CaseInsensitive) )
+    {
+        s = "A bientot !";
+        m_windows->ReponseVicci(s);
+    }
+    if( s.contains("blague", Qt::CaseInsensitive) )
+    {
+        int  alea = rand()%100;
+        if(alea<33)
+        {
+            s = " Deux vaches discutent : \n - Ca te fais pas peur toi ces histoires de ''vache folle''? \n - Je m'en fiche je suis un lapin ! " ;
+            m_windows->ReponseVicci(s);
+        }
+        if(alea >33 && alea <66)
+        {
+            s = " Un policier arrête un automobiliste : \n _Vous roullez à combien ? \n - Bah tout seul pourquoi ?";
+            m_windows->ReponseVicci(s);
+        }
+        if(alea >66 && alea <99)
+        {
+            s = " Deux puces sortent du cinéma, l'une dit à l'autre : \n -Tu rentre à pied? \n - Oh, non je prend un chien !";
+            m_windows->ReponseVicci(s);
+        }
+    }
+        if( s.contains("Info", Qt::CaseInsensitive) )
+        {
+            s = " - Si vous voulez de la musiques demandez moi de la musique suivi du genre que vous souhaitez écouter ( pop, rock, rap, etc... \n ";
+            s = s + "- Si vous voulez l'heure demandez moi l'heure. \n ";
+            s = s+ "- Si vous voulez la météo d'aujourd'hui jusqu'à aprés demain, demandez moi le temps qu'il fait suivi du mot clé aujourd'hui, demain ou aprés-demain.";
+            m_windows->ReponseVicci(s);
+        }
+
+    }
+
 
 bool Interpretation::traiterHeure(QString s)
 {
@@ -189,8 +227,5 @@ void Interpretation::donnerReponseHeure()
     m_windows->ReponseVicci(s);
 }
 
-bool Interpretation::Aurevoir(QString s)
-{
-    if ( s.contains("au revoir", Qt::CaseInsensitive) ) exit(1);
-}
+
 
