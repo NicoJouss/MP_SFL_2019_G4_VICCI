@@ -154,9 +154,9 @@ bool Interpretation::traiterMusique(QString s)
 
         if( s.contains("pop", Qt::CaseInsensitive) )
         {
-            std::cout << "Le_dragon.mp3" << std::endl;
+            std::cout << "" << std::endl;
             s = "Mettre de la musique pop";
-            m_windows->jouerMusique("Le_dragon.mp3");
+            m_windows->jouerMusique("AC-DC - Back In Black (Official Video)(youzik.net).mp3");
 
             //m_windows->ReponseVicci(s);
         }
@@ -177,7 +177,9 @@ bool Interpretation::traiterMusique(QString s)
         }
         if( s.contains("rock", Qt::CaseInsensitive) )
         {
-            s = "Mettre de la musique rock";
+             s= "Mettre de la musique rock";
+            s = s+ "Oh year ! J'adore ce son";
+              m_windows->jouerMusique("AC-DC - Back In Black (Official Video)(youzik.net).mp3");
             m_windows->ReponseVicci(s);
         }
         if( s.contains("classique", Qt::CaseInsensitive) )
