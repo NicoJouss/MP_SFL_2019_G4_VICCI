@@ -23,6 +23,7 @@ SOURCES += \
     requete.cpp
 
 HEADERS += \
+    define.h \
     interpretation.h \
     mainwindow.h \
     questions.h \
