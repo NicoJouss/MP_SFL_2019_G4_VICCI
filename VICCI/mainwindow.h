@@ -30,7 +30,6 @@ public:
     void requeteRecue(QString nom, QString resultat);
     void Question();
 
-
     void on_pushButton_clicked();
 
     private:

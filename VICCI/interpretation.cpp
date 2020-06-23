@@ -1,57 +1,18 @@
 #include "interpretation.h"
 #include "mainwindow.h"
-
 #include <iostream>
 #include <stdio.h>
 #include <string>
 #include <QTime>
 #include <stdlib.h>
-
 #include <QString>
 
-
-
 using namespace std;
-
-//enum mots : String
-//{
-//    mot1,   //temps
-//    mot2,   //aujourdhui,
-//    mot3,   //demain,
-//    mot4,   //musique,
-//    mot5    //heure
-//};
-//enum genre : String //genre de musique
-//{
-//    pop,
-//    electro,
-//    rap,
-//    rock,
-//};
 
 Interpretation::Interpretation(MainWindow * windows)
 {
     m_windows = windows;
 }
-
-void Interpretation::afficher()
-{
-
-}
-
-int Interpretation::VerificationDePhrase()
-{
-
-}
-
-
-void Interpretation::RechercheBDD()
-{
-
-}
-
-
-
 
 void Interpretation::nouvelleQuestion( QString question )
 {
@@ -85,7 +46,7 @@ bool Interpretation::Discussion(QString s)
 
     if( s.contains("Hey", Qt::CaseInsensitive) )
     {
-        s = "Hey, quelle est votre requète ?";
+        s = "Hey, quelle est votre requête ?";
         m_windows->ReponseVicci(s);
     }
     if( s.contains("Rien", Qt::CaseInsensitive) )
@@ -122,16 +83,16 @@ bool Interpretation::Discussion(QString s)
             m_windows->ReponseVicci(s);
         }
     }
-        if( s.contains("Info", Qt::CaseInsensitive) )
-        {
-            s = "- Si vous voulez de la musiques demandez moi de la musique suivi du genre que vous souhaitez écouter (pop, rock, rap, etc...). \n ";
-            s = s + "- Si vous voulez l'heure demandez moi l'heure. \n ";
-            s = s+ "- Si vous voulez la météo d'aujourd'hui jusqu'à aprés demain, demandez moi le temps qu'il fait suivi du mot clé aujourd'hui, demain ou aprés-demain. \n";
-            s = s+ "- Envie de rire ? Demandez moi de vous raconter une blague ! \n";
-            m_windows->ReponseVicci(s);
-        }
-
+    if( s.contains("Info", Qt::CaseInsensitive) )
+    {
+        s = "- Si vous voulez de la musiques demandez moi de la musique suivi du genre que vous souhaitez écouter (pop, rock, rap, etc...). \n ";
+        s = s + "- Si vous voulez l'heure demandez moi l'heure. \n ";
+        s = s+ "- Si vous voulez la météo d'aujourd'hui jusqu'à aprés demain, demandez moi le temps qu'il fait suivi du mot clé aujourd'hui, demain ou aprés-demain. \n";
+        s = s+ "- Envie de rire ? Demandez moi de vous raconter une blague ! \n";
+        m_windows->ReponseVicci(s);
     }
+
+}
 
 
 bool Interpretation::traiterHeure(QString s)
@@ -162,6 +123,7 @@ bool Interpretation::traiterMusique(QString s)
         {
             std::cout << "" << std::endl;
             s = "Mettre de la musique pop \n";
+            s = s + "Oui désolé c'est pas Mickeal Jackson, et alors ?";
             m_windows->jouerMusique("Imagine Dragons - Believer(youzik.net).mp3");
 
             m_windows->ReponseVicci(s);
@@ -190,9 +152,9 @@ bool Interpretation::traiterMusique(QString s)
         }
         if( s.contains("rock", Qt::CaseInsensitive) )
         {
-             s= "Mettre de la musique rock \n";
+            s= "Mettre de la musique rock \n";
             s = s+ "Oh year ! J'adore ce son";
-              m_windows->jouerMusique("AC-DC - Back In Black (Official Video)(youzik.net).mp3");
+            m_windows->jouerMusique("AC-DC - Back In Black (Official Video)(youzik.net).mp3");
             m_windows->ReponseVicci(s);
         }
         if( s.contains("classique", Qt::CaseInsensitive) )
@@ -232,14 +194,12 @@ bool Interpretation::traiterMeteo(QString s)
     }
 }
 
-
 void Interpretation::donnerReponseHeure()
 {
     QTime heure = QTime::currentTime ();
     QString s;
     s = "Il est ";
     s = s + heure.toString("H:mm:ss");
-
     m_windows->ReponseVicci(s);
 }
 

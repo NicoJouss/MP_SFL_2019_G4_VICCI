@@ -4,7 +4,6 @@
  */
 
 #include "requete.h"
-
 #include <QNetworkReply>
 #include <iostream>
 

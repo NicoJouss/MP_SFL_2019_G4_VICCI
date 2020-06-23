@@ -10,17 +10,14 @@ class Interpretation
 {
 public:
     Interpretation(MainWindow * windows);
-   int NbDemots;
-   int tableau[100];
+
 
    MainWindow * m_windows;
 
    void nouvelleQuestion(QString question);
 
 private:
-    void afficher();
-    int VerificationDePhrase();
-    void RechercheBDD();
+
     bool Discussion(QString s);
     bool traiterHeure(QString s);
     bool traiterMusique(QString s);

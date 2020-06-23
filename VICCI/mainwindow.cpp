@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
 #include <iostream>
 #include "define.h"
 
@@ -20,15 +19,14 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 /** --------------------------------------------------------------------------------------
  * \brief Méthode appelée lorsque l'on clique sur le bouton trameButton.
  */
 void MainWindow::on_trameButton_clicked()
 {
 
-   // m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
-     m_requete->update("musique", "http://127.0.0.10/musiqueSelonArtiste.php");
+    // m_requete->update("trame", "http://217.128.90.45:8044/html/vantagePro2/trame.php");
+    m_requete->update("musique", "http://127.0.0.10/musiqueSelonArtiste.php");
 }
 
 /** --------------------------------------------------------------------------------------
@@ -56,7 +54,7 @@ void MainWindow::jouerMusique(QString s)
     m_player = new QMediaPlayer;
 
     // mettre le chemin de votre dossier musique
-   // s.prepend("/home/nicolas/Documents/Musique/");
+    // s.prepend("/Users/bapti/Desktop/Musique/");
     s.prepend(CHEMIN_MUSIQUE);
 
     std::cout << QUrl::fromLocalFile(s).toString().toStdString() << std::endl;
@@ -68,7 +66,7 @@ void MainWindow::jouerMusique(QString s)
 
 void MainWindow::Question()
 {
-     m_interpretation.nouvelleQuestion("il fait beau. ");
+    m_interpretation.nouvelleQuestion("il fait beau. ");
 }
 
 void MainWindow::ReponseVicci(QString reponse)
