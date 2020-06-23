@@ -56,7 +56,7 @@ void MainWindow::jouerMusique(QString s)
     m_player = new QMediaPlayer;
 
     // mettre le chemin de votre dossier musique
-   // s.prepend("/home/nicolas/Documents/Cours/Informatique/MP_SFL_2019_G4_VICCI/Musique/");
+   // s.prepend("/home/nicolas/Documents/Musique/");
     s.prepend(CHEMIN_MUSIQUE);
 
     std::cout << QUrl::fromLocalFile(s).toString().toStdString() << std::endl;

@@ -24,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     define.h \
+    define.h \
     interpretation.h \
     mainwindow.h \
     questions.h \
